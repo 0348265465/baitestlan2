@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        function findOppositeNumber(n, inputNumber){
+            if (isNaN(n) && isNaN(inputNumber)) {
+                return "Số truyền vào không hợp lệ";
+            }
+            if (n % 2 !== 0 && n < 4 && n > 20) {
+                return "Số truyền vào phải là số dương chẵn và trong khoảng từ 4 đến 20";
+            } else if (inputNumber < 0 || inputNumber > n - 1) {
+                return "inPutNumber không nằm trong khoảng n, vui lòng nhập lại";
+            } else {
+                for (let i = 0; i < n - 1; i++) {
+                const tempNumber = n / 2;
+                let oppositeNumber = inputNumber + tempNumber;
+                if (oppositeNumber > n - 1) {
+                    oppositeNumber = tempNumber - inputNumber;
+                    if (oppositeNumber < 0) {
+                    return -oppositeNumber;
+                    }
+                    return oppositeNumber;
+                } else {
+                    return oppositeNumber;
+                }
+                }
+            }
+        }
+            console.log("Test case 1: ", findOppositeNumber(10, 2));
+            console.log("Test case 2: ", findOppositeNumber(10, 7));
+            console.log(findOppositeNumber(20, 6));
+    </script>
+</body>
+</html>

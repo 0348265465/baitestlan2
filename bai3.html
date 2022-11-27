@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style3.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather:ital,wght@1,300;1,900&family=Montserrat:ital,wght@0,300;1,200&family=Open+Sans:ital,wght@1,300&display=swap" rel="stylesheet">
+    <title>Lucky nymber</title>
+</head>
+<body>
+    <div class="container">
+        <div class="title">
+            <h1>Lucky Number</h1>
+        </div>
+        <div class="form-lucky">
+            <h3>Dự đoán con số của bạn nằm trong khoảng 1 đến 10</h3><br>
+            <input type="text" placeholder="Nhập con số mà bạn dự đoán" id="number">
+            <button type="button" onclick="checkForm()">Quay Số</button>
+        </div>
+    </div>
+    <script>
+        function checkForm(){
+            let number=document.getElementById('number').value;
+            if(isNaN(number)){
+                alert("Hãy nhập vào số");
+            }else{
+                if(number>= 1 && number<=10){
+                    
+
+                }
+                else{
+                    alert("Nhập số trong khoảng 1 đến 10")
+                }
+                let rnd = 1 + Math.round(Math.random()*9 )
+                if (number == rnd ){
+                    alert("Lucky number - Bạn đã đoán đúng ")
+                }
+                
+                
+                else{
+                    alert("Bạn đã đoán sai, số may mắn là : " + rnd)
+                    
+                }
+            }
+            
+        }
+    </script>
+</body>
+</html>

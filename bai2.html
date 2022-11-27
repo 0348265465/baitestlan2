@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+       
+    function merge2String(s1, s2) {
+        let i,
+            j = Math.min(s1.length, s2.length),
+            temp = '';
+
+        for( i = 0; i < j; i++) {
+            temp += s1[i] + s2[i];
+        }
+        return temp + s1.slice(i) + s2.slice(i);
+    }
+
+    console.log(merge2String('abc', '123')); 
+    console.log(merge2String('abc', '0123'));  
+    console.log(merge2String('abcd', '123')); 
+    console.log(merge2String('ab12', 'cd123')); 
+        
+    </script>
+</body>
+</html>
